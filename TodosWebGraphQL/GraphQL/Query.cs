@@ -12,6 +12,7 @@ namespace TodosWebGraphQL.GraphQL
 
         [UseFiltering]
         [UseSorting]
+        
         public IList<Todo> GetTodos([Service] ITodoData context)
         {
             

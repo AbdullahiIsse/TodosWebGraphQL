@@ -57,14 +57,16 @@ namespace TodosWebGraphQL.Data
             return todo;
         }
 
-        public void RemoveTodo(int todoId)
+        public  int RemoveTodo(int todoId)
         {
             Todo toRemove = todos.First(t => t.TodoId == todoId);
             todos.Remove(toRemove);
             WriteTodossToFile();
+
+            return todoId;
         }
 
-        public Todo Update(Todo todo)
+        public async Task<Todo> Update(Todo todo)
         {
             Todo toUpdate = todos.First(t => t.TodoId == todo.TodoId);
             toUpdate.IsCompleted = todo.IsCompleted;

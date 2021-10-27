@@ -10,9 +10,9 @@ namespace TodosWebGraphQL.Data
 
         IList<Todo> GetTodos();
         Task<Todo> AddTodo(Todo todo);
-        void RemoveTodo(int todoId);
+         int RemoveTodo(int todoId);
 
-        Todo Update(Todo todo);
+         Task<Todo> Update(Todo todo);
 
         Todo Get(int id);
 
