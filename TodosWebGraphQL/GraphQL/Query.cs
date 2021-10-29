@@ -20,6 +20,12 @@ namespace TodosWebGraphQL.GraphQL
         }
         
         
+        public Todo GetTodosById([Service] ITodoData context,int id)
+        {
+            
+            return context.Get(id);
+        }
+        
         
 
 
